@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>列表页</title>
+		<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
+		<meta name="description" content="JS代码网提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- basic styles -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/style.css" charset="utf-8" />
+		<script src="assets/js/ace-extra.min.js"></script>
+	</head>
+
+	<body>
+		<div class="navbar navbar-default" id="navbar">
+			<script type="text/javascript">
+				try {
+					ace.settings.check('navbar', 'fixed')
+				} catch(e) {}
+			</script>
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand">
+						<small>
+							智慧支付综合管理系统
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav pull-right">
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									admin
+								</span>
+
+								<i class="icon-angle-down"></i>
+							</a>
+
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="icon-cog"></i> Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="icon-user"></i> Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="login.html">
+										<i class="icon-off"></i> Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- /.ace-nav -->
+					<span href="#" class="navbar-download pull-right"><i class="icon-circle-arrow-down"></i><a href="#">模板下载</a></span>
+				</div>
+				<!-- /.navbar-header -->
+			</div>
+			<!-- /.container -->
+		</div>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try {
+					ace.settings.check('main-container', 'fixed')
+				} catch(e) {}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<div class="sidebar" id="sidebar">
+					<script type="text/javascript">
+						try {
+							ace.settings.check('sidebar', 'fixed')
+						} catch(e) {}
+					</script>
+
+					<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+						<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+							<i class="icon-list-ul pull-right"></i>
+							<em><img src="assets/images/index/icon_gn.png" alt=""></em> 功能菜单
+						</div>
+
+					</div>
+					<!-- #sidebar-shortcuts -->
+
+					<ul class="nav nav-list">
+						<li class="active open">
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-file-alt"></i>
+								<span class="menu-text">
+									页面设计
+									<span class="badge badge-primary "></span>
+								</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu" style="display: block;">
+								<li class="active">
+									<a href="index.html">
+										<i class="icon-double-angle-right"></i> 首页
+									</a>
+								</li>
+								<li>
+									<a href="customer.html">
+										<i class="icon-double-angle-right"></i> 管理页面
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="sidebar-collapse" id="sidebar-collapse">
+						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+					</div>
+
+					<script type="text/javascript">
+						try {
+							ace.settings.check('sidebar', 'collapsed')
+						} catch(e) {}
+					</script>
+				</div>
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">首页</a>
+							</li>
+							<li class="active">
+								客户信息管理
+							</li>
+						</ul>
+					</div>
+					<div class="page-content indexBox">
+						<div class="listOper">
+							<button class="btn btn-sm btn-primary">
+								<i class="icon-save"></i>
+								客户录入
+							</button>
+							<button class="btn btn-sm btn-success">
+								<i class="icon-upload-alt"></i>
+								批量导入
+							</button>
+						</div>
+						<div class="row listBox">
+							<div class="col-xs-3 listLeft">
+								<div class="widget-box widget-color-blue2">
+									<div class="widget-header">
+										<h4 class="widget-title lighter smaller">客户信息列表</h4>
+									</div>
+
+									<div class="widget-body">
+										<div class="widget-main padding-8">
+											<ul id="tree1"></ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-xs-9 listRight">
+								<div class="dataTables_wrapper form-inline no-footer">
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="dataTables_length">
+												<label>每页 
+													<select class="input-sm">
+														<option value="10">10</option>
+														<option value="25">25</option>
+														<option value="50">50</option>
+														<option value="100">100</option>
+													</select> 条记录
+												</label>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="dataTables_filter">
+												<label>
+													<input type="search" class="input-sm" placeholder="搜索……"></label>
+											</div>
+										</div>
+									</div>
+									<table class="table table-striped table-bordered table-hover dataTable no-footer">
+										<thead>
+											<tr>
+												<th class="sorting">账号</th>
+												<th class="sorting">学工号</th>
+												<th>姓名</th>
+												<th>手机号</th>
+												<th class="sorting">卡号</th>
+												<th>补助类型</th>
+												<th>状态</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>72</td>
+												<td>201703167</td>
+												<td>王曦</td>
+												<td>13546767890</td>
+												<td>6225667898465859</td>
+												<td>1</td>
+												<td>已发</td>
+												<td>
+													<a href="#"><i class="icon-edit"></i>编辑</a>
+													<a href="#"><i class="icon-trash"></i>删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>72</td>
+												<td>201703167</td>
+												<td>王曦</td>
+												<td>13546767890</td>
+												<td>6225667898465859</td>
+												<td>1</td>
+												<td>已发</td>
+												<td>
+													<a href="#"><i class="icon-edit"></i>编辑</a>
+													<a href="#"><i class="icon-trash"></i>删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>72</td>
+												<td>201703167</td>
+												<td>王曦</td>
+												<td>13546767890</td>
+												<td>6225667898465859</td>
+												<td>1</td>
+												<td>已发</td>
+												<td>
+													<a href="#"><i class="icon-edit"></i>编辑</a>
+													<a href="#"><i class="icon-trash"></i>删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>72</td>
+												<td>201703167</td>
+												<td>王曦</td>
+												<td>13546767890</td>
+												<td>6225667898465859</td>
+												<td>1</td>
+												<td>已发</td>
+												<td>
+													<a href="#"><i class="icon-edit"></i>编辑</a>
+													<a href="#"><i class="icon-trash"></i>删除</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="row pageBox">
+										<div class="col-xs-6">
+											<div class="dataTables_info" id="dynamic-table_info" role="status" aria-live="polite">显示 1 至 10 项，共 23 项</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
+												<ul class="pagination">
+													<li class="paginate_button previous disabled" aria-controls="dynamic-table" tabindex="0" id="dynamic-table_previous">
+														<a href="#"><</a>
+													</li>
+													<li class="paginate_button active" aria-controls="dynamic-table" tabindex="0">
+														<a href="#">1</a>
+													</li>
+													<li class="paginate_button " aria-controls="dynamic-table" tabindex="0">
+														<a href="#">2</a>
+													</li>
+													<li class="paginate_button " aria-controls="dynamic-table" tabindex="0">
+														<a href="#">3</a>
+													</li>
+													<li class="paginate_button next" aria-controls="dynamic-table" tabindex="0" id="dynamic-table_next">
+														<a href="#">></a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /.page-content -->
+				</div>
+				<!-- /.main-content -->
+			</div>
+			<!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div>
+		<!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+
+		<script src="assets/js/jquery-1.10.2.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/typeahead-bs2.min.js"></script>
+		<script src="assets/js/tree.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+		<script type="text/javascript">
+			jQuery(function($) {
+				var sampleData = initiateDemoData(); //see below
+
+				$('#tree1').ace_tree({
+					dataSource: sampleData['dataSource1'],
+					multiSelect: true,
+					cacheItems: true,
+					'open-icon': 'icon-minus-sign blue',
+					'close-icon': 'icon-plus-sign blue',
+					'itemSelect': true,
+					'folderSelect': false,
+					'selected-icon': 'icon-check blue',
+					'unselected-icon': 'icon-time blue',
+					loadingHTML: '<div class="tree-loading"><i class="icon-refresh"></i></div>'
+				});
+
+				$('#tree2').ace_tree({
+					dataSource: sampleData['dataSource2'],
+					loadingHTML: '<div class="tree-loading"><i class="icon-refresh"></i></div>',
+					'open-icon': 'icon-folder-open blue',
+					'close-icon': 'icon-folder-close blue',
+					'itemSelect': true,
+					'folderSelect': true,
+					'multiSelect': true,
+					'selected-icon': null,
+					'unselected-icon': null,
+					'folder-open-icon': 'ace-icon tree-plus',
+					'folder-close-icon': 'ace-icon tree-minus'
+				});
+
+				/**
+				//Use something like this to reload data	
+				$('#tree1').find("li:not([data-template])").remove();
+				$('#tree1').tree('render');
+				*/
+
+				/**
+				//please refer to docs for more info
+				$('#tree1')
+				.on('loaded.fu.tree', function(e) {
+				})
+				.on('updated.fu.tree', function(e, result) {
+				})
+				.on('selected.fu.tree', function(e) {
+				})
+				.on('deselected.fu.tree', function(e) {
+				})
+				.on('opened.fu.tree', function(e) {
+				})
+				.on('closed.fu.tree', function(e) {
+				});
+				*/
+
+				function initiateDemoData() {
+					var tree_data = {
+						'for-sale': {
+							text: 'For Sale',
+							type: 'folder'
+						},
+						'vehicles': {
+							text: 'Vehicles',
+							type: 'folder'
+						},
+						'rentals': {
+							text: 'Rentals',
+							type: 'folder'
+						},
+						'real-estate': {
+							text: 'Real Estate',
+							type: 'folder'
+						},
+						'pets': {
+							text: 'Pets',
+							type: 'folder'
+						},
+						'tickets': {
+							text: 'Tickets',
+							type: 'item'
+						},
+						'services': {
+							text: 'Services',
+							type: 'item'
+						},
+						'personals': {
+							text: 'Personals',
+							type: 'item'
+						}
+					}
+					tree_data['for-sale']['additionalParameters'] = {
+						'children': {
+							'appliances': {
+								text: 'Appliances',
+								type: 'item'
+							},
+							'arts-crafts': {
+								text: 'Arts & Crafts',
+								type: 'item'
+							},
+							'clothing': {
+								text: 'Clothing',
+								type: 'item'
+							},
+							'computers': {
+								text: 'Computers',
+								type: 'item'
+							},
+							'jewelry': {
+								text: 'Jewelry',
+								type: 'item'
+							},
+							'office-business': {
+								text: 'Office & Business',
+								type: 'item'
+							},
+							'sports-fitness': {
+								text: 'Sports & Fitness',
+								type: 'item'
+							}
+						}
+					}
+					tree_data['vehicles']['additionalParameters'] = {
+						'children': {
+							'cars': {
+								text: 'Cars',
+								type: 'folder'
+							},
+							'motorcycles': {
+								text: 'Motorcycles',
+								type: 'item'
+							},
+							'boats': {
+								text: 'Boats',
+								type: 'item'
+							}
+						}
+					}
+					tree_data['vehicles']['additionalParameters']['children']['cars']['additionalParameters'] = {
+						'children': {
+							'classics': {
+								text: 'Classics',
+								type: 'item'
+							},
+							'convertibles': {
+								text: 'Convertibles',
+								type: 'item'
+							},
+							'coupes': {
+								text: 'Coupes',
+								type: 'item'
+							},
+							'hatchbacks': {
+								text: 'Hatchbacks',
+								type: 'item'
+							},
+							'hybrids': {
+								text: 'Hybrids',
+								type: 'item'
+							},
+							'suvs': {
+								text: 'SUVs',
+								type: 'item'
+							},
+							'sedans': {
+								text: 'Sedans',
+								type: 'item'
+							},
+							'trucks': {
+								text: 'Trucks',
+								type: 'item'
+							}
+						}
+					}
+
+					tree_data['rentals']['additionalParameters'] = {
+						'children': {
+							'apartments-rentals': {
+								text: 'Apartments',
+								type: 'item'
+							},
+							'office-space-rentals': {
+								text: 'Office Space',
+								type: 'item'
+							},
+							'vacation-rentals': {
+								text: 'Vacation Rentals',
+								type: 'item'
+							}
+						}
+					}
+					tree_data['real-estate']['additionalParameters'] = {
+						'children': {
+							'apartments': {
+								text: 'Apartments',
+								type: 'item'
+							},
+							'villas': {
+								text: 'Villas',
+								type: 'item'
+							},
+							'plots': {
+								text: 'Plots',
+								type: 'item'
+							}
+						}
+					}
+					tree_data['pets']['additionalParameters'] = {
+						'children': {
+							'cats': {
+								text: 'Cats',
+								type: 'item'
+							},
+							'dogs': {
+								text: 'Dogs',
+								type: 'item'
+							},
+							'horses': {
+								text: 'Horses',
+								type: 'item'
+							},
+							'reptiles': {
+								text: 'Reptiles',
+								type: 'item'
+							}
+						}
+					}
+
+					var dataSource1 = function(options, callback) {
+						var $data = null
+						if(!("text" in options) && !("type" in options)) {
+							$data = tree_data; //the root tree
+							callback({
+								data: $data
+							});
+							return;
+						} else if("type" in options && options.type == "folder") {
+							if("additionalParameters" in options && "children" in options.additionalParameters)
+								$data = options.additionalParameters.children || {};
+							else $data = {} //no data
+						}
+
+						if($data != null) //this setTimeout is only for mimicking some random delay
+							setTimeout(function() {
+								callback({
+									data: $data
+								});
+							}, parseInt(Math.random() * 500) + 200);
+
+						//we have used static data here
+						//but you can retrieve your data dynamically from a server using ajax call
+						//checkout examples/treeview.html and examples/treeview.js for more info
+					}
+
+					var tree_data_2 = {
+						'pictures': {
+							text: 'Pictures',
+							type: 'folder',
+							'icon-class': 'red'
+						},
+						'music': {
+							text: 'Music',
+							type: 'folder',
+							'icon-class': 'orange'
+						},
+						'video': {
+							text: 'Video',
+							type: 'folder',
+							'icon-class': 'blue'
+						},
+						'documents': {
+							text: 'Documents',
+							type: 'folder',
+							'icon-class': 'green'
+						},
+						'backup': {
+							text: 'Backup',
+							type: 'folder'
+						},
+						'readme': {
+							text: '<i class="ace-icon fa fa-file-text grey"></i> ReadMe.txt',
+							type: 'item'
+						},
+						'manual': {
+							text: '<i class="ace-icon fa fa-book blue"></i> Manual.html',
+							type: 'item'
+						}
+					}
+					tree_data_2['music']['additionalParameters'] = {
+						'children': [{
+								text: '<i class="ace-icon fa fa-music blue"></i> song1.ogg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-music blue"></i> song2.ogg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-music blue"></i> song3.ogg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-music blue"></i> song4.ogg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-music blue"></i> song5.ogg',
+								type: 'item'
+							}
+						]
+					}
+					tree_data_2['video']['additionalParameters'] = {
+						'children': [{
+								text: '<i class="ace-icon fa fa-film blue"></i> movie1.avi',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-film blue"></i> movie2.avi',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-film blue"></i> movie3.avi',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-film blue"></i> movie4.avi',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-film blue"></i> movie5.avi',
+								type: 'item'
+							}
+						]
+					}
+					tree_data_2['pictures']['additionalParameters'] = {
+						'children': {
+							'wallpapers': {
+								text: 'Wallpapers',
+								type: 'folder',
+								'icon-class': 'pink'
+							},
+							'camera': {
+								text: 'Camera',
+								type: 'folder',
+								'icon-class': 'pink'
+							}
+						}
+					}
+					tree_data_2['pictures']['additionalParameters']['children']['wallpapers']['additionalParameters'] = {
+						'children': [{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> wallpaper1.jpg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> wallpaper2.jpg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> wallpaper3.jpg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> wallpaper4.jpg',
+								type: 'item'
+							}
+						]
+					}
+					tree_data_2['pictures']['additionalParameters']['children']['camera']['additionalParameters'] = {
+						'children': [{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> photo1.jpg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> photo2.jpg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> photo3.jpg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> photo4.jpg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> photo5.jpg',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-picture-o green"></i> photo6.jpg',
+								type: 'item'
+							}
+						]
+					}
+
+					tree_data_2['documents']['additionalParameters'] = {
+						'children': [{
+								text: '<i class="ace-icon fa fa-file-text red"></i> document1.pdf',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-file-text grey"></i> document2.doc',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-file-text grey"></i> document3.doc',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-file-text red"></i> document4.pdf',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-file-text grey"></i> document5.doc',
+								type: 'item'
+							}
+						]
+					}
+
+					tree_data_2['backup']['additionalParameters'] = {
+						'children': [{
+								text: '<i class="ace-icon fa fa-archive brown"></i> backup1.zip',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-archive brown"></i> backup2.zip',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-archive brown"></i> backup3.zip',
+								type: 'item'
+							},
+							{
+								text: '<i class="ace-icon fa fa-archive brown"></i> backup4.zip',
+								type: 'item'
+							}
+						]
+					}
+					var dataSource2 = function(options, callback) {
+						var $data = null
+						if(!("text" in options) && !("type" in options)) {
+							$data = tree_data_2; //the root tree
+							callback({
+								data: $data
+							});
+							return;
+						} else if("type" in options && options.type == "folder") {
+							if("additionalParameters" in options && "children" in options.additionalParameters)
+								$data = options.additionalParameters.children || {};
+							else $data = {} //no data
+						}
+
+						if($data != null) //this setTimeout is only for mimicking some random delay
+							setTimeout(function() {
+								callback({
+									data: $data
+								});
+							}, parseInt(Math.random() * 500) + 200);
+
+						//we have used static data here
+						//but you can retrieve your data dynamically from a server using ajax call
+						//checkout examples/treeview.html and examples/treeview.js for more info
+					}
+
+					return {
+						'dataSource1': dataSource1,
+						'dataSource2': dataSource2
+					}
+				}
+
+			});
+		</script>
+
+		<!-- inline scripts related to this page -->
+	</body>
+
+</html>
